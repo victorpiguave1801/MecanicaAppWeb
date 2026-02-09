@@ -1,0 +1,203 @@
+/* css/login-auto.css */
+
+body {
+    background: #e5e7eb; /* Color asfalto claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.pista-carrera {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: floatCar 3s ease-in-out infinite;
+}
+
+/* --- ESTRUCTURA DEL AUTO --- */
+.car-login {
+    width: 380px;
+    position: relative;
+    z-index: 10;
+}
+
+/* 1. Techo (Trapezoide redondeado) */
+.car-roof {
+    width: 280px;
+    height: 70px;
+    background: #374151; /* Gris oscuro mate */
+    margin: 0 auto;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    top: 5px; /* Para que se una al cuerpo */
+    z-index: 1;
+    box-shadow: inset 0 5px 10px rgba(255,255,255,0.1);
+}
+
+.windshield {
+    width: 240px;
+    height: 50px;
+    background: linear-gradient(180deg, #60a5fa 0%, #2563eb 100%); /* Efecto vidrio azulado */
+    margin: 10px auto 0;
+    border-radius: 30px 30px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1f2937;
+}
+
+.windshield h2 {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-family: 'Inter', sans-serif;
+}
+
+/* 2. Cuerpo del Auto */
+.car-body {
+    background: #111827; /* Negro Carrocería */
+    border-radius: 20px;
+    padding: 30px 20px;
+    position: relative;
+    box-shadow: 
+        inset 0 10px 20px rgba(255,255,255,0.05), /* Brillo metálico arriba */
+        0 10px 20px rgba(0,0,0,0.3); /* Sombra profundidad */
+    z-index: 2;
+}
+
+/* Faros (Luces LED) */
+.headlight {
+    position: absolute;
+    top: 20px;
+    width: 40px;
+    height: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px 2px #3b82f6; /* Resplandor Azul Xenón */
+}
+.headlight.left { left: 15px; transform: skewX(10deg); }
+.headlight.right { right: 15px; transform: skewX(-10deg); }
+
+/* La Parrilla (El Formulario) */
+.grille {
+    background: #1f2937; /* Gris rejilla */
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid #374151;
+    /* Efecto de líneas de parrilla usando gradiente */
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 10px,
+        #111827 10px,
+        #111827 12px
+    );
+}
+
+/* Inputs (Estilizados como ranuras técnicas) */
+.input-group {
+    background: #111827;
+    border: 1px solid #4b5563;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    transition: 0.3s;
+}
+.input-group:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+.input-group .icon { font-size: 1.2rem; margin-right: 10px; }
+
+input {
+    background: transparent;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 12px 0;
+    font-family: 'Inter', sans-serif;
+}
+input:focus { outline: none; border: none; background: transparent; }
+input::placeholder { color: #6b7280; }
+
+/* Botón de Encendido */
+.btn-ignition {
+    width: 100%;
+    background: #ef4444; /* Botón Rojo Start/Stop */
+    border: none;
+    padding: 12px;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #b91c1c; /* Efecto 3D */
+    transition: all 0.1s;
+    margin-top: 10px;
+}
+.btn-ignition:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+.btn-ignition:hover { background: #dc2626; }
+
+/* Alerta de error */
+.motor-check {
+    background: #fef2f2;
+    color: #ef4444;
+    padding: 8px;
+    font-size: 0.8rem;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* 3. Ruedas (Estilizadas) */
+.wheels-container {
+    position: relative;
+    height: 20px;
+    width: 100%;
+}
+.wheel {
+    width: 50px;
+    height: 50px;
+    background: #111;
+    border-radius: 10px 10px 20px 20px;
+    position: absolute;
+    top: -25px; /* Suben para esconderse tras el chasis */
+    z-index: 0;
+    border-left: 5px solid #333; /* Detalle neumático */
+}
+.wheel.left { left: 20px; }
+.wheel.right { right: 20px; transform: scaleX(-1); }
+
+/* Sombra en el suelo */
+.shadow-floor {
+    width: 350px;
+    height: 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    margin-top: 5px;
+    filter: blur(5px);
+    animation: shadowScale 3s ease-in-out infinite;
+}
+
+/* Animación de flotación "Suspensión" */
+@keyframes floatCar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+@keyframes shadowScale {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50% { transform: scale(0.9); opacity: 0.1; }
+}

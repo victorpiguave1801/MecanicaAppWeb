@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $direccion = $_POST['direccion'];
 
     if (!empty($nombre) && !empty($telefono)) {
-        $sql = "INSERT INTO mensajes (nombre, telefono, email, direccion) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO clientes (nombre, telefono, email, direccion) VALUES (?, ?, ?, ?)";
         $stmt = $pdo->prepare($sql);
         
         if ($stmt->execute([$nombre, $telefono, $email, $direccion])) {

@@ -2,7 +2,7 @@
 session_start();
 // Seguridad: Solo admin puede ver esto
 if (!isset($_SESSION['admin'])) header("Location: login.php");
-require 'conexion.php';
+require 'db.php';
 
 // 1. CALCULAR TOTAL HISTÓRICO DE VENTAS
 $total_ingresos = $pdo->query("SELECT SUM(total) FROM ventas")->fetchColumn();

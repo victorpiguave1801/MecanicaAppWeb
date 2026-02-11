@@ -64,6 +64,8 @@ $repuestos = $pdo->query("SELECT * FROM repuestos ORDER BY id DESC")->fetchAll()
             <a href="admin.php" class="active">📦 Inventario de Piezas</a>
             <a href="ventas.php">📈 Reporte de Ventas</a>
             <a href="clientes.php">👥 Cartera de Clientes</a>
+            <a href="ventas.php">📈 Ventas</a>
+    <a href="servicios_admin.php">🛠️ Servicios</a>
         </aside>
 
         <main>

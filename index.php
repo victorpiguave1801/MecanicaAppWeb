@@ -77,9 +77,7 @@ $repuestos = $stmt->fetchAll();
             <a href="index.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : ''; ?>">
                 Catálogo
             </a>
-            <a href="contacto.php" class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'contacto.php' ? 'active' : ''; ?>">
-                Contacto y Ubicación
-            </a>
+    <a href="servicios.php">Servicios</a>  <a href="contacto.php">Contacto</a>
             </nav>
 
         <div class="user-actions">
@@ -112,6 +110,18 @@ $repuestos = $stmt->fetchAll();
         </div>
     </div>
 </header>
+<div style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url('imagenes/hero.jpg'); color:white;  text-align: center; padding: 60px 20px;">
+        <h1 style="margin: 0; font-size: 2.5rem;">Servicios Profesionales</h1>
+        <p style="opacity: 0.8; margin-top: 10px;">Soluciones integrales para el cuidado de tu vehículo.</p>
+                <div class="hero-buttons">
+                <a href="#catalogo-repuestos" class="btn btn-primary btn-hero icon-btn">
+                    <i class="fas fa-shopping-bag"></i> Ver Catálogo
+                </a>
+                <a href="servicios.php" class="btn btn-outline-white btn-hero icon-btn">
+                    <i class="fas fa-calendar-check"></i> Agendar Servicio
+                </a>
+            </div>
+    </div>
 
     <a href="https://wa.me/593999511682?text=Hola, Me gustaria cotizar el precios de algunas herrmientas y materiales" class="btn-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>

@@ -46,7 +46,6 @@ $ventas = $stmt->fetchAll();
             <a href="admin.php">📦 Inventario</a>
             <a href="ventas.php" class="active">📈 Ventas y Facturación</a>
             <a href="clientes.php">👥 Cartera de Clientes</a>
-            <a href="mensajes.php">✉️ Mensajes</a>
             <a href="logout.php" style="color: #ef4444; margin-top: 20px;">Cerrar Sesión</a>
         </aside>
 
